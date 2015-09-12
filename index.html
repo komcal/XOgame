@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>game XO</title>
+
+<style type="text/css">
+.box{
+	width: 28px;
+	height: 28px;
+	margin:auto;
+	display: inline-block; 
+	border: 1px solid gray; 
+	border-radius: 2px;
+	background: #D8D8D8;
+	}
+.box-red{
+	background: #FF0000;
+}
+.box-blue{
+		background: #2E2EFE;
+}
+.red{
+	color: #FF0000;
+}
+.blue{
+	color: #2E2EFE
+}
+.player-red {
+	color: #FF0000;
+}
+.player-blue {
+	color: #2E2EFE;
+}
+</style>
+
+</head>
+<body>
+	<center>
+	<h1>Tic Tac Toe</h1>
+	<h4 class="turn"></h4>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span><br>
+	<h2 id="username">Username ???</h2>
+	</center>
+
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script type="text/javascript">
+	var isPlayer = false;
+	var username = prompt("Username ?") || "NoUserName";
+	$('#username').text(username);
+</script>
+<script>
+	var socket = io();
+	$('.box').click(function(){
+		var position = $('.box').index(this);
+		if(isPlayer)
+			socket.emit('update',position);
+	});
+	socket.on('connect',function(){
+		clearUI();
+		socket.emit('join',username);
+	});
+	socket.on('fillcolor',function(map){
+		fillColor(map);
+	});
+	socket.on('gameend',function(player){
+		endGame(player);
+	});
+	socket.on('canplay',function(color){
+		setPlayer(color);
+	});
+	socket.on('turn',function(player){
+		turnColor(player);
+
+	});
+	function turnColor(player){
+		if(player){
+			$(".turn").html("RED turn.");
+			$("h4").removeClass();
+			$("h4").addClass('turn');
+			$("h4").addClass('player-red');
+		}
+		else{
+			$(".turn").html("BLUE turn.");
+			$("h4").removeClass();
+			$("h4").addClass('turn');
+			$("h4").addClass('player-blue');
+		}
+	}
+	function fillColor(map){
+		for (var i = 0; i < map.length*15; i++) {
+			var box = $('.box')[i];
+			box = $(box);
+			
+			if(map[Math.floor(i/15)][i%15] == -1) box.addClass('box-red');
+			else if(map[Math.floor(i/15)][i%15] == 1) box.addClass('box-blue');
+			else {
+				box.removeClass();
+				box.addClass('box');
+			}
+		}
+	}
+	function endGame(player){
+		if(!player)
+		alert("RED WIN!");
+		else
+		alert("BLUE WIN!");
+		isPlayer = false;
+		clearUI();
+		socket.emit('regame', '');
+	}
+	function clearUI(){
+		$('.box').each(function(index){
+			$(this).removeClass();
+			$(this).addClass('box');
+		});
+		$(".turn").html("");
+		$("h4").removeClass();
+		$("h4").addClass('turn');
+	}
+	function setPlayer(color){
+		console.log(color);
+		$('#username').removeClass();
+		$('#username').addClass(color == 'red' ? 'player-red' : 'player-blue');
+		isPlayer = true;
+		turnColor(true);
+	}
+</script>
+
+</body>
+</html>
