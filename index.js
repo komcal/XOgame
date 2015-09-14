@@ -116,15 +116,28 @@ function isPlayerTurn(id){
 	var index = players.indexOf(id);
 	return index != player;
 }
+function isPlayer(id) {
+	var index = players.indexOf(id);
+	return index >= 0; // hard code
+}
 io.on('connection',function(socket){
 	//console.log(socket.id);
 	clients.push(socket.id);
 	socket.on('update',function(position){
-		if (isPlayerTurn(socket.id)) {
+		if (isPlayerTurn(socket.id) && isPlayer(socket.id)) {
 			fillMap(position);
 			io.emit('fillcolor',map);
 			if (isGameEnd()) gameEnd();
 			else io.emit('turn',player);
+		}
+	});
+	socket.on('disconnect', function() {
+		console.log('***[disconnected : ' + socket.id + ']');
+		var index = clients.indexOf(socket.id);
+		clients.splice(index, 1);
+		if (isPlayer(socket.id)) {
+			gameEnd();
+			console.log('game should end');
 		}
 	});
 	socket.on('join',function(username){
@@ -135,6 +148,11 @@ io.on('connection',function(socket){
 	socket.on('regame',function(){
 		prepare(socket);
 		io.emit('fillcolor', map);
+	});
+	socket.on('chat message',function(massage){
+		massage  = socket.username + ": " + massage;
+		console.log(massage);
+		io.emit('chat massage',massage);
 	});
 });
 
